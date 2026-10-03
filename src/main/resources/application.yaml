@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: book-store
+  modulith:
+    events:
+      # Ripubblica automaticamente gli eventi "non completati" al riavvio dell'app
+      republish-outstanding-events-on-restart: true
+      # Rimuove l'evento dal DB una volta che è stato elaborato con successo per evitare che la tabella esploda (altrimenti usa "archive")
+      completion-mode: delete
+  datasource:
+    password: password
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
