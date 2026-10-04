@@ -11,6 +11,9 @@ class BookStoreApplicationTests {
     void contextLoads() {
     }
 
+    /*
+    Se da un modulo provo a introdurre una dipendenza interna di un altro modulo il test non passa.
+     */
     @Test
     void verifiesModularStructure() {
         ApplicationModules.of(BookStoreApplication.class).verify();
