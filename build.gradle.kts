@@ -34,6 +34,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.0")
     testImplementation("com.h2database:h2")
+    testImplementation("org.springframework.modulith:spring-modulith-docs")
 }
 
 dependencyManagement {

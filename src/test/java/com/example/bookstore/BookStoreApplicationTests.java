@@ -3,6 +3,7 @@ package com.example.bookstore;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.modulith.core.ApplicationModules;
+import org.springframework.modulith.docs.Documenter;
 
 @SpringBootTest
 class BookStoreApplicationTests {
@@ -16,7 +17,15 @@ class BookStoreApplicationTests {
      */
     @Test
     void verifiesModularStructure() {
-        ApplicationModules.of(BookStoreApplication.class).verify();
+        ApplicationModules modules =
+                ApplicationModules.of(BookStoreApplication.class);
+
+        modules.verify();
+
+        //Genera automaticamente la documentazione in build/spring-modulith-docs
+        new Documenter(modules)
+                .writeModulesAsPlantUml()
+                .writeIndividualModulesAsPlantUml();
     }
 
 }

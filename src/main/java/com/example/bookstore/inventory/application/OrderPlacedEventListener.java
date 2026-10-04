@@ -17,9 +17,11 @@ public class OrderPlacedEventListener {
         this.stockManagmentService = stockManagmentService;
     }
 
-    //l'evento lo prendo dall'altro modulo perchè è pubblico
+    //l'evento lo prendo dall'altro modulo perchè è pubblico.
     //dentro usa le annotazioni @Async,@Transactional,@TransactionalEventLister.
+    //Questo ci forza a pensare allo stesso modello che useremmo in un contesto a microservizi.
     /*
+    Gli eventi sono eventi Spring quindi nella JVM.
     Significano che esegue il metodo su un thread separato. Usa una nuova transazione in modo
     che il listener possa fallire e chi pubblica no.
     •@EventListener: reagisce alla pubblicazione immediata dell’evento;
